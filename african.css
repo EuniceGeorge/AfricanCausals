@@ -15,15 +15,11 @@ body {
   .logo {
     width: 10%;
     height: auto;
-    border: 1px solid black;
+    margin: 0, auto;
   }
-  .hero {
-    float: flex;
-    /* display: inline-block; */
-  }
-  .nav li {
+  
+  a {
     display: inline-block;
-    padding: 20px;
   }
   ul {
     list-style: none;
