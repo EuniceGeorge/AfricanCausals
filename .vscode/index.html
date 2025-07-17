@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>African Casuals - Redefining African Elegance</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #d4a574, #c99660);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-text {
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 4rem;
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            color: #f5f5f5;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: #d2691e;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #b8581a;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .model-image {
+            width: 100%;
+            max-width: 400px;
+            height: 600px;
+            background: linear-gradient(45deg, #ff6b35, #d2691e, #228b22, #4169e1);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .model-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="swirl" patternUnits="userSpaceOnUse" width="20" height="20"><path d="M10,2 C15,2 18,5 18,10 C18,15 15,18 10,18 C5,18 2,15 2,10 C2,5 5,2 10,2 Z" fill="none" stroke="white" stroke-width="0.5" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23swirl)"/></svg>') repeat;
+            opacity: 0.4;
+        }
+
+        .model-silhouette {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 90%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            border-radius: 50px 50px 0 0;
+        }
+
+        /* About Section */
+        .about {
+            background: #f8f6f3;
+            padding: 100px 0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        .about-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .about-image {
+            height: 200px;
+            background: linear-gradient(45deg, #ff6b35, #d2691e);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image:first-child {
+            background: linear-gradient(45deg, #ff6b35, #d2691e, #228b22);
+        }
+
+        .about-image:last-child {
+            background: linear-gradient(45deg, #1e3a8a, #3b82f6);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="20" fill="none" stroke="white" stroke-width="2" opacity="0.3"/><circle cx="20" cy="20" r="10" fill="none" stroke="white" stroke-width="1" opacity="0.2"/><circle cx="80" cy="80" r="15" fill="none" stroke="white" stroke-width="1.5" opacity="0.2"/></svg>') repeat;
+        }
+
+        /* Featured Collection */
+        .featured {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .featured h2 {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 60px;
+            color: #333;
+        }
+
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .collection-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .collection-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .collection-image {
+            height: 350px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .collection-item:nth-child(1) .collection-image {
+            background: linear-gradient(45deg, #1e3a8a, #3b82f6);
+        }
+
+        .collection-item:nth-child(2) .collection-image {
+            background: linear-gradient(45deg, #059669, #10b981);
+        }
+
+        .collection-item:nth-child(3) .collection-image {
+            background: linear-gradient(45deg, #dc2626, #ef4444);
+        }
+
+        .collection-item:nth-child(4) .collection-image {
+            background: linear-gradient(45deg, #f59e0b, #fbbf24);
+        }
+
+        .collection-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="african" patternUnits="userSpaceOnUse" width="25" height="25"><rect width="25" height="25" fill="none"/><path d="M12.5,5 L20,12.5 L12.5,20 L5,12.5 Z" fill="none" stroke="white" stroke-width="1" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23african)"/></svg>') repeat;
+        }
+
+        .model-figure {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 80%;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            border-radius: 50px 50px 0 0;
+        }
+
+        /* Crafted Section */
+        .crafted {
+            background: #f8f6f3;
+            padding: 100px 0;
+        }
+
+        .crafted-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .crafted-text h2 {
+            font-size: 3rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .crafted-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .crafted-image {
+            height: 200px;
+            background: linear-gradient(45deg, #d2691e, #ff6b35);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .crafted-image:last-child {
+            background: linear-gradient(45deg, #059669, #10b981);
+        }
+
+        .crafted-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><polygon points="50,10 90,90 10,90" fill="none" stroke="white" stroke-width="2" opacity="0.3"/><polygon points="50,30 70,70 30,70" fill="none" stroke="white" stroke-width="1" opacity="0.2"/></svg>') repeat;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content,
+            .about-content,
+            .crafted-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-text h2,
+            .crafted-text h2,
+            .featured h2 {
+                font-size: 2rem;
+            }
+
+            .collection-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .about-images,
+            .crafted-images {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-text,
+        .about-text,
+        .crafted-text {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .collection-item {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .collection-item:nth-child(2) { animation-delay: 0.1s; }
+        .collection-item:nth-child(3) { animation-delay: 0.2s; }
+        .collection-item:nth-child(4) { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Redefining<br>African<br>Elegance</h1>
+                    <p>Explore our collection of casual African wears infused with modern style attire.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-primary">Shop Now</a>
+                        <a href="#" class="btn btn-secondary">Discover Story</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="model-image">
+                        <div class="model-silhouette"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Us</h2>
+                    <p>Rooted in tradition, African Casuals blends the rich heritage of African culture with contemporary design to create unique attire.</p>
+                </div>
+                <div class="about-images">
+                    <div class="about-image"></div>
+                    <div class="about-image"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Collection -->
+    <section class="featured">
+        <div class="container">
+            <h2>Featured Collection</h2>
+            <div class="collection-grid">
+                <div class="collection-item">
+                    <div class="collection-image">
+                        <div class="model-figure"></div>
+                    </div>
+                </div>
+                <div class="collection-item">
+                    <div class="collection-image">
+                        <div class="model-figure"></div>
+                    </div>
+                </div>
+                <div class="collection-item">
+                    <div class="collection-image">
+                        <div class="model-figure"></div>
+                    </div>
+                </div>
+                <div class="collection-item">
+                    <div class="collection-image">
+                        <div class="model-figure"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crafted Section -->
+    <section class="crafted">
+        <div class="container">
+            <div class="crafted-content">
+                <div class="crafted-text">
+                    <h2>Crafted with<br>Creativity</h2>
+                </div>
+                <div class="crafted-images">
+                    <div class="crafted-image"></div>
+                    <div class="crafted-image"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Add smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all collection items
+        document.querySelectorAll('.collection-item').forEach(item => {
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>
